@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  python:
+    image: mlflow
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        storage_url: "wasbs://<container>@<storage-account>.blob.core.windows.net/<path>"
+    environment:
+    - AZURE_STORAGE_CONNECTION_STRING="your-connection-string"
+
